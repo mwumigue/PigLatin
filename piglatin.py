@@ -1,25 +1,33 @@
-# Write your code here
-
-from string import ascii_lowercase
-from string import ascii_uppercase
-
-vowels = ['a', 'e', 'i', 'o', 'u']
 
 
-def pig_latinize_one_word_vowel(string):
-    if string.lower.startswith(vowels):
-        return string + "yay"
+vowels = ('a', 'e', 'i', 'o', 'u')
+new_Word = []
+new_Phrase = []
 
 
-def pig_latinize_one_word_single_consonant(string):
-    for c in ascii_lowercase:
-        if string.lower.find(c) == 0:
-            return string.replace(c, "") + "-" + c + "ay"
-            break
-        break
+def pig_latinize_one_word_vowel(one_word):
+    one_word = one_word.lower()
+    return one_word + "yay"
 
 
-def pig_latinize_one_word_multiple_consonant(string):
-    for c.lower.find("a") | c.lower.find("e") | c.lower.find("i") | c.lower.find("o") | c.lower.find("u"):
+def pig_latinize_one_word_consonant(one_word):
+    one_word = one_word.lower()
+    while one_word[0] not in vowels:
+        new_Word.append(one_word[0])
+        one_word = one_word[1:]
+    consonant = "".join(new_Word)
+    return one_word + consonant + "ay"
 
 
+def pig_latinize_one_word(word):
+    word = word.lower()
+    if word[0] in vowels:
+        return pig_latinize_one_word_vowel(word)
+    else:
+        return pig_latinize_one_word_consonant(word)
+
+def pig_latinize(phrase):
+    for word in phrase.split():
+        new_Phrase.append(pig_latinize_one_word(word))
+    pig_latinized_phrase = " ".join(new_Phrase)
+    return pig_latinized_phrase

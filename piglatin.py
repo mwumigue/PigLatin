@@ -34,4 +34,3 @@ def pig_latinize(phrase):
         new_Phrase.append(pig_latinize_one_word(word))
     pig_latinized_phrase = " ".join(new_Phrase)
     return pig_latinized_phrase
-

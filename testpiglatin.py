@@ -1,4 +1,4 @@
 import piglatin
 
 
-print(piglatin.pig_latinize_one_word_consonant("Speaking"))
+print(piglatin.pig_latinize("Hello World"))
